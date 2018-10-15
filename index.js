@@ -1,8 +1,9 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
 const Stopwatch = require('statman-stopwatch');
 const timeconverter = require('./modules/timeconverter.js');
 const config = require("./config.json");
+
+const client = new Discord.Client();
 
 client.on("message", async message => {
     if (message.author.bot) return;
@@ -20,8 +21,26 @@ client.on("message", async message => {
             message.channel.send(author.toString() + ', created new race #id!');
             break;
         case "races":
+            message.channel.send({embed: {
+                color: 3066993,
+                description: "To view the race details, use the command: .details <race-id>",
+                fields: [{
+                    name: "Sample Race Title",
+                    value: "Seed: <link>"
+                }]
+            }})
             break;
-        case "raceinfo":
+        case "details":
+            message.channel.send({embed: {
+                color: 3066993,
+                title: "Sample Race Title",
+                description: "Seed: <link>",
+                //url: "lttp rando link"
+                fields: [{
+                    name: "Participants",
+                    value: "FlamingRok, Hippoman"
+                }]
+            }})
             break;
         case "join":
             var author = message.author;
@@ -44,6 +63,16 @@ client.on("message", async message => {
             message.channel.send(author.toString() + ' has forfeited race #id.');
             break;
         case "result":
+            message.channel.send({embed: {
+                color: 3066993,
+                title: "Race Results for Race #id",
+                description: "Seed: <link>",
+                //url: "lttp rando link"
+                fields: [{
+                    name: "Results",
+                    value: "1) FlamingRok (00:30:43) \n 2) Hippoman (01:22:40)"
+                }]
+            }})
             break;
         case "start":
             break;

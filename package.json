@@ -1,0 +1,32 @@
+{
+  "name": "lttpr-community-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jnguyen95/lttpr-community-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jnguyen95/lttpr-community-bot/issues"
+  },
+  "homepage": "https://github.com/jnguyen95/lttpr-community-bot#readme",
+  "dependencies": {
+    "bufferutil": "^3.0.5",
+    "discord.js": "^11.4.2",
+    "erlpack": "github:discordapp/erlpack",
+    "libsodium-wrappers": "^0.7.3",
+    "mathjs": "^5.2.0",
+    "node-opus": "^0.2.9",
+    "opusscript": "0.0.6",
+    "sodium": "^2.0.3",
+    "statman-stopwatch": "^2.7.0",
+    "uws": "^9.148.0"
+  }
+}

@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const Stopwatch = require('statman-stopwatch');
+const timeconverter = require('./Modules/timeconverter.js');
 
 client.on("message", async message => {
     if (message.author.bot) return;

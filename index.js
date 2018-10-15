@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const Stopwatch = require('statman-stopwatch');
-const timeconverter = require('./Modules/timeconverter.js');
+const timeconverter = require('./modules/timeconverter.js');
+const config = require("./config.json");
 
 client.on("message", async message => {
     if (message.author.bot) return;
@@ -36,11 +37,11 @@ client.on("message", async message => {
             var author = message.author;
             // Debugging purposes!
             var time = timeconverter.convertToTime(72063);
-            message.channel.send(author.toString() + ' has completed race #id with time: ' + )
+            message.channel.send(author.toString() + ' has completed race #id with time: ' + time );
             break;
         case "forfeit":
             var author = message.author;
-            message.channel.send(author.toString() + ' has forfeited race #id.')
+            message.channel.send(author.toString() + ' has forfeited race #id.');
             break;
         case "result":
             break;
@@ -51,4 +52,4 @@ client.on("message", async message => {
     }
 })
 
-client.login();
+client.login(config.token);
